@@ -16,9 +16,9 @@ rooms = {"Lobby": [], "Room01": []}
 ADMIN_HASHED_PASSWD = hashlib.sha256('adminpassword'.encode('utf-8')).hexdigest()
 
 instructions = b'-------------------------------------------------------' \
-				+ b'\n[+] Comandos Validos [+]\n'\
-				+ b'[/CREATE] Para criar uma sala\n'\
-				+ b'[/JOIN] Para entrar em uma sala\n' \
+		+ b'\n[+] Comandos Validos [+]\n'\
+		+ b'[/CREATE] Para criar uma sala\n'\
+		+ b'[/JOIN] Para entrar em uma sala\n' \
                 + b'[/LIST] Para listar as salas disponiveis\n' \
                 + b'[/LISTUSERS] Para listar os usuarios conectados\n' \
                 + b'[/LISTBANNED] Para listar os usuarios banidos\n' \
@@ -26,11 +26,11 @@ instructions = b'-------------------------------------------------------' \
                 + b'[/TIME] Para mostrar o horario atual\n' \
                 + b'[/BAN]  Para banir um usuario\n' \
                 + b'[/UNBAN] Para desbanir um usuario do servidor\n' \
-				+ b'[/QUIT] Para sair da sala\n' \
-				+ b'[/EXIT] Para encerrar a conexao com o servidor\n' \
-				+ b'[/KICK] Para kickar um usuario da sala\n' \
-				+ b'-------------------------------------------------------' \
-				+ b'\n'
+		+ b'[/QUIT] Para sair da sala\n' \
+		+ b'[/EXIT] Para encerrar a conexao com o servidor\n' \
+		+ b'[/KICK] Para kickar um usuario da sala\n' \
+		+ b'-------------------------------------------------------' \
+		+ b'\n'
 
 def help(client):
     client.sendall(instructions)
