@@ -40,7 +40,11 @@
 
 O projeto tem por objetivo a implementação de um servidor de chat baseado no protocolo TCP e imitando o protocolo IRC (Internet Relay Chat). O servidor deve ser  capaz de interpretar alguns comandos recebidos através de solicitações via linha de comando(telnet), ter suporte á conexão de múltiplos usuários, diversas salas de bate-papo, autenticação, entre outras funções . O servidor deve ser capaz de responder a essas solicitações corretamente.
 
-Durante a implementação das funcionalidades, a RFC do protocolo IRC(https://datatracker.ietf.org/doc/html/rfc1459) foi utilizada como base para esclarecimentos. A linguagem Python foi utilizada para a implementação, valendo apenas do módulo “sockets” e “threading” como base.
+Durante a implementação das funcionalidades, a RFC do protocolo IRC(https://datatracker.ietf.org/doc/html/rfc1459) foi utilizada como base para esclarecimentos. A linguagem Python foi utilizada para a implementação, valendo apenas do módulo “sockets” e “threading” como base. O projeto foi desenvolvido em um ambiente da família “unix-like”, portanto, para evitar possíveis inconsistências, execute o projeto em um ambiente linux, utilizando o terminal de sua preferência.
+
+As senhas são armazenadas de forma encriptada em uma lista, através da criptografia SHA-256, aumentando a segurança. Ao conectar-se ao servidor, o usuário é automaticamente adicionado à sala “Lobby”, a sala principal do servidor.
+
+Importante: Para executar os comandos /ban, /unban e /kick uma senha de administrador é requerida, a senha é exibida apenas ao operador do servidor. Para facilitar a usabilidade, a senha padrão foi definida como: “adminpassword”. Além disso, para cada comando executado no servidor uma mensagem é exibida no terminal do operador do servidor.
 
 ***
 
@@ -87,17 +91,58 @@ Após a conexão via telnet ser realizada, a tela inicial do servidor é exibida
 
 Os comandos implementados foram: 
 - [x] /CREATE
-- [x] /LOGIN
+
+  Este comando tem a função de criar uma nova sala de chat no servidor. Por padrão, é perguntado ao usuário qual o nome da sala que será criada e por fim, em que sala o usuário deseja entrar.
+
+- [x] /JOIN
+
+  O comando /join têm por função principal inserir o usuário em uma sala. Se o comando for executado com o usuário estando em outra sala, este é retirado da lista da sala original e adicionado na sala em que deseja entrar.
+
 - [x] /DELETE
+
+  Este comando tem por função deletar alguma sala de chat criada no servidor. Se houver usuários na sala, eles serão movidos para a sala “Lobby” e a sala será excluída.
+
 - [x] /LIST
+
+  Este comando tem por função principal listar as salas de chat disponíveis no servidor e a quantidade de usuários em cada uma.
+
 - [x] /LISTUSERS
+
+  Através deste comando é possível visualizar quais usuários estão conectados ao servidor através dos nicknames.
+
 - [x] /LISTBANNED
+
+  Através deste comando é possível visualizar todos os usuários que foram banidos do servidor. Todos os nomes exibidos estão presentes no arquivo “bans.txt”.
+
 - [x] /BAN
+
+  Este comando tem a função de banir permanentemente um usuário de conectar-se ao servidor. Para utilizá-lo é necessário informar a senha “adminpassword”, por tratar-se de uma ação de usuário administrador. O usuário banido é então adicionado ao arquivo “bans.txt” e não consegue conectar-se ao servidor enquanto seu nickname estiver na lista de banimento.
+
 - [x] /UNBAN
-- [x] /QUIT
+
+  O comando /unban tem por finalidade desbanir um usuário do servidor, fazendo com que o nickname seja retirado da lista de banimento e o usuário consiga conectar-se novamente ao servidor. Assim como no comando para realizar o banimento, a senha de administrador é requerida para executar o comando.
+
+- [x] /LEAVE
+
+  O comando /leave tem por função fazer com que o usuário que o inseriu saia da sala em que está no momento e seja automaticamente adicionado à sala “Lobby”, a sala principal.
+
 - [x] /EXIT
+
+   Este comando tem a função de encerrar a conexão do usuário com o servidor. Para executá-lo, uma confirmação é solicitada(sim/nao) e a senha do usuário é necessária para confirmar a ação. Após a conexão ser encerrada, as informações do usuário são excluídas do servidor.
+
 - [x] /KICK
+
+  Este comando tem por função principal “kickar” um usuário da sala em que ele está. Para sua execução, a senha de administrador é necessária.
+
 - [x] /TIME
+
+  Este comando tem por função principal exibir o horário no momento em que é executado.
+
+- [X] /HELP
+
+  Através deste comando o menu com todos é exibido na tela do usuário.
+
+***
 
 ## 4. Autores 🤖
 
