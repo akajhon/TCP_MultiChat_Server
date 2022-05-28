@@ -82,10 +82,22 @@ Para entrar no servidor digite:
 Após a conexão via telnet ser realizada, a tela inicial do servidor é exibida solicitando nome, nickname e senha. 
 
 <p align="center">
-  <img src="https://github.com/akajhon/HTTP_Sockets_Server/blob/main/images/cmd_client_post.png" alt="501" width="450" height="300"/>
+  <img src="https://github.com/akajhon/TCP_MultiChat_Server/blob/main/images/img01.png" alt="Telnet" width="450" height="450"/>
 </p>
 
 Os comandos implementados foram: 
+- [x] /CREATE
+- [x] /LOGIN
+- [x] /DELETE
+- [x] /LIST
+- [x] /LISTUSERS
+- [x] /LISTBANNED
+- [x] /BAN
+- [x] /UNBAN
+- [x] /QUIT
+- [x] /EXIT
+- [x] /KICK
+- [x] /TIME
 
 ## 4. Autores 🤖
 
