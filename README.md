@@ -15,27 +15,6 @@
 
 ***
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Índice</summary>
-  <ol>
-    <li>
-      <a href="https://github.com/akajhon/HTTP_Sockets_Server/edit/main/README.md#1-introdu%C3%A7%C3%A3o-">Introdução</a>
-    </li>
-    <li>
-      <a href="https://github.com/akajhon/HTTP_Sockets_Server/edit/main/README.md#2-rodando-localmente-">Rodando Localmente</a>
-    </li>
-    <li>
-      <a href="https://github.com/akajhon/HTTP_Sockets_Server/edit/main/README.md#2-requisi%C3%A7%C3%A3o-via-linha-de-comando-">Requisição via TELNET</a>
-    </li>
-    <li>
-      <a href="https://github.com/akajhon/HTTP_Sockets_Server/edit/main/README.md#6-autores-">Autores</a>
-    </li>
-  </ol>
-</details>
-
-***
-
 ## 1. Introdução 📘
 
 O projeto tem por objetivo a implementação de um servidor de chat baseado no protocolo TCP e imitando o protocolo IRC (Internet Relay Chat). O servidor deve ser  capaz de interpretar alguns comandos recebidos através de solicitações via linha de comando(telnet), ter suporte á conexão de múltiplos usuários, diversas salas de bate-papo, autenticação, entre outras funções . O servidor deve ser capaz de responder a essas solicitações corretamente.
